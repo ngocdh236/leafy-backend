@@ -1,0 +1,43 @@
+{
+  "name": "wallpaper_backend",
+  "version": "1.0.0",
+  "description": "Wallpaper backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "nyc mocha ./tests/**/test-*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thinhv/wallpaper_backend.git"
+  },
+  "author": "Thinh Vo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thinhv/wallpaper_backend/issues"
+  },
+  "homepage": "https://github.com/thinhv/wallpaper_backend#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^7.1.2",
+    "mongodb-memory-server": "^6.5.2",
+    "nyc": "^15.0.1",
+    "sinon": "^9.0.2"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.668.0",
+    "bcrypt": "^4.0.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-graphql": "^0.9.0",
+    "graphql": "^15.0.0",
+    "graphql-upload": "^10.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.11",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0"
+  }
+}
