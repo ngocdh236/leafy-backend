@@ -27,26 +27,26 @@ const schema = buildSchema(`
         token: String
     }
 
-    type Post {
+    type Plant {
         _id: ID!
         imageUrl: String!
         description: String
         likedByUsers: [ID]
-        postedByUser: User
+        userId: User
         likedByMe: Boolean
         createdAt: String
     }
 
     type UserProfile {
         user: User!
-        posts: [Post]
+        plants: [Plant]
     }
 
     type Query {
         user(id: ID!): User
         login(username: String!, password: String!): User
-        posts(start: Int, limit: Int): [Post]
-        post(id: ID): Post
+        plants(start: Int, limit: Int): [Plant]
+        plant(id: ID): Plant
         userProfile(username: String!): UserProfile
     }
 
@@ -55,10 +55,10 @@ const schema = buildSchema(`
         updateUser(bio: String, firstName: String!, lastName: String!): User
         updateUserImage(file: Upload): User
         upload(file: Upload!, description: String): DummyFile
-        createPost(file: Upload!, description: String): Post
-        updatePost(id: String, description: String): Post
-        deletePost(id: String): Post
-        likePost(id: String): Post
+        addPlant(file: Upload!, description: String): Plant
+        updatePlant(id: String, description: String): Plant
+        deletePlant(id: String): Plant
+        likePlant(id: String): Plant
     }
 `);
 
