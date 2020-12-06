@@ -18,8 +18,8 @@ const schema = buildSchema(`
         id: ID!
         username: String!
         email: String!
-        firstName: String!
-        lastName: String!
+        firstName: String
+        lastName: String
         isVerified: Boolean!
         bio: String
         userType: String!
@@ -51,8 +51,8 @@ const schema = buildSchema(`
     }
 
     type Mutation {
-        registerUser(username: String!, email: String!, password: String!, firstName: String!, lastName: String!, bio: String): User
-        updateUser(bio: String, firstName: String!, lastName: String!): User
+        registerUser(username: String!, email: String!, password: String!, firstName: String, lastName: String, bio: String): User
+        updateUser(bio: String, firstName: String, lastName: String): User
         updateUserImage(file: Upload): User
         upload(file: Upload!, description: String): DummyFile
         addPlant(file: Upload!, description: String): Plant
