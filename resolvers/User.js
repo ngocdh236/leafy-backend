@@ -14,8 +14,10 @@ const user = async ({ id }, _) => {
 
 const registerUser = async (args, { req, res, authController }) => {
   const userExists = await User.exists({
-    username: args.username,
-    email: args.email,
+    $or: [
+      {username: args.username},
+      {email: args.email}
+    ]
   });
 
   if (userExists) {
@@ -94,7 +96,7 @@ const userProfile = async ({ username, _ }) => {
     throw new Error('User not found by username');
   }
 
-  const plants = Plant.find({ userId: new ObjectId(user._id) }).populate(
+  const plants = Plant.find({ user: new ObjectId(user._id) }).populate(
     'user'
   );
 
