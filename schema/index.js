@@ -32,7 +32,7 @@ const schema = buildSchema(`
         imageUrl: String!
         description: String
         likedByUsers: [ID]
-        userId: User
+        user: User
         likedByMe: Boolean
         createdAt: String
     }

@@ -7,7 +7,7 @@ const plantSchema = new Schema({
   imageUrl: { type: String, required: true },
   description: { type: String },
   likedByUsers: [{ type: Schema.Types.ObjectId, ref: 'User' }],
-  userId: { type: Schema.Types.ObjectId, ref: 'User' },
+  user: { type: Schema.Types.ObjectId, ref: 'User' },
   createdAt: { type: Date, default: Date.now },
 });
 

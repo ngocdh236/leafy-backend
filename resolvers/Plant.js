@@ -14,7 +14,7 @@ const plants = async (args, { req, res, authController }) => {
     .skip(start)
     .sort({ createdAt: -1 })
     .limit(limit)
-    .populate('userId');
+    .populate('user');
 
   try {
     const user = await authController.checkAuth(req, res);
@@ -28,7 +28,7 @@ const plants = async (args, { req, res, authController }) => {
 };
 
 const plant = async (args, _) => {
-  const plant = await Plant.findById(args.id).populate('userId');
+  const plant = await Plant.findById(args.id).populate('user');
   return plant;
 };
 
@@ -41,7 +41,7 @@ const addPlant = async (args, { req, res, authController }) => {
   const user = await authController.checkAuth(req, res);
 
   const plant = await Plant.create({
-    userId: user._id,
+    user: user._id,
     description,
     imageUrl: data.Location,
   });
@@ -54,7 +54,7 @@ const updatePlant = async (args, { req, res, authController }) => {
 
   const plant = await Plant.findById(args.id);
 
-  if (plant.userId.toString() == user._id) {
+  if (plant.user.toString() == user._id) {
     plant.description = args.description;
     await plant.save();
     return plant;
@@ -68,7 +68,7 @@ const deletePlant = async (args, { req, res, authController }) => {
 
   const plant = await Plant.findById(args.id);
 
-  if (plant.userId.toString() == user._id) {
+  if (plant.user.toString() == user._id) {
     await Plant.deleteOne({ _id: plant._id });
     return plant;
   } else {

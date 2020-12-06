@@ -95,7 +95,7 @@ const userProfile = async ({ username, _ }) => {
   }
 
   const plants = Plant.find({ userId: new ObjectId(user._id) }).populate(
-    'userId'
+    'user'
   );
 
   return {
