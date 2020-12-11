@@ -52,39 +52,9 @@ Please checkout Jenkinsfile for the pipeline
   - Why [mongodb-memory-server](https://www.chaijs.com/) instead of `Sinon.stub`?
     - no need to know which method the implementation code (mongoose model) uses
     - no need to write many lines of code for stubbing/mocking
+
 ### Docker
 This project has been dockerized so it is easy to fireup on any machine running [docker](https://docker.com)
-
-### Deployment @ muzify.eu
-##### Architecture
-![Architecture](Architecture.png)
-##### Security
-  -  Firewall is on
-  ```
-    thinh@ubuntuserver:~/wallpaper_backend$ sudo ufw status verbose
-    Status: active
-    Logging: on (low)
-    Default: deny (incoming), allow (outgoing), deny (routed)
-    New profiles: skip
-    
-    To                         Action      From
-    --                         ------      ----
-    443/tcp (Nginx HTTPS)      ALLOW IN    Anywhere                  
-    80/tcp (Nginx HTTP)        ALLOW IN    Anywhere                  
-    22/tcp (OpenSSH)           ALLOW IN    Anywhere                  
-    443/tcp (Nginx HTTPS (v6)) ALLOW IN    Anywhere (v6)             
-    80/tcp (Nginx HTTP (v6))   ALLOW IN    Anywhere (v6)             
-    22/tcp (OpenSSH (v6))      ALLOW IN    Anywhere (v6)     
-  ```
-  - `npm audit`
-  ```
-  thinh@ubuntuserver:~/wallpaper_backend$ sudo npm audit
-                                                                                
-                       === npm audit security report ===                        
-                                                                                
-found 0 vulnerabilities
- in 1418 scanned packages
-  ```
 
 ### Todos
   -  Search images
