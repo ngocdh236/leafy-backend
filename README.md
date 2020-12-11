@@ -31,13 +31,7 @@ https://leafy-backend.herokuapp.com/graphql)
  
 ### Used service
   - This project uses [Amazon S3](https://aws.amazon.com/s3/) as a simple storage service for images.
- 
-### CI/CD
-Regarding CI/CD a pipeline has been setup with [Jenkins](https://jenkins.muzify.eu)
-Github Webhook: https://jenkins.muzify.eu/github-webhook/ (push)
-
-Please checkout Jenkinsfile for the pipeline
-
+  
 ### Unit testing & app structure
   - GraphQL Resolvers contain most of the logics and process requests therefore they need to be unit-tested carefully.
   - Dependencies which are injected to the resolvers: `authenticationController` and `imageService`.
