@@ -3,8 +3,8 @@
 [![Build Status](https://jenkins.muzify.eu/buildStatus/icon?job=wallpaper-nodejs)](https://jenkins.muzify.eu/job/wallpaper-nodejs/)
 
 Simple Node.js + GraphQL app in which user can discover & share beautiful images.
-The backend is deployed at [backend.muzify.eu](https://backend.muzify.eu/graphql)
-The fronent is deployed at is [muzify.eu](https://muzify.eu)([Github repo]())
+The backend is deployed at [leafy-backend.herokuapp.com/graphql](host
+https://leafy-backend.herokuapp.com/graphql)
  
 ### Run project
  - Install [docker](https://www.docker.com/)
