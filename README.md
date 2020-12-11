@@ -1,7 +1,5 @@
 # Node.js Project
 
-[![Build Status](https://jenkins.muzify.eu/buildStatus/icon?job=wallpaper-nodejs)](https://jenkins.muzify.eu/job/wallpaper-nodejs/)
-
 Simple Node.js + GraphQL app in which user can discover & share beautiful images.
 The backend is deployed at [leafy-backend.herokuapp.com/graphql](host
 https://leafy-backend.herokuapp.com/graphql)
